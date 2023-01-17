@@ -1,3 +1,3 @@
 # Eric_Blog
 
-## 紀錄leetcode 75 刷題過程
+## 紀錄leetCode 75 刷題過程
