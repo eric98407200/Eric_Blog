@@ -1,4 +1,4 @@
-# 紀錄leetCode 75 刷題過程
+# 淺淺地紀錄leetCode 75 刷題過程
 
 ## Two Sum 
 ### 問題
