@@ -25,8 +25,9 @@ class Solution {
     }
 }
 ```
-* 因使用兩個for迴圈，時間複雜度是O(n^2)
-### 解答2 : 建立一個HashMap，在for迴圈中利用差值所得到另一個數值，查詢HashMap內是否有存在，如果有的話則返回其索引值。
+* 因使用到兩個for迴圈解題，所以時間複雜度得出是O(n^2)
+
+### 解答2 : 建立一個HashMap，先將值存進，在使用一個for迴圈達成
 ```java
 class Solution {
     public int[] twoSum(int[] nums, int target) {
@@ -41,4 +42,4 @@ class Solution {
     }
 }
 ```
-* 因只使用一個for迴圈，時間複雜度是O(n)
+* 這邊因只使用一個for迴圈，其中利用差值所得到另一個數值，查詢HashMap內是否有存在，如果有的話則返回其索引值。此方法時間複雜度是O(n)
