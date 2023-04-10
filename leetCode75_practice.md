@@ -31,14 +31,15 @@ class Solution {
 ```java
 class Solution {
     public int[] twoSum(int[] nums, int target) {
-        Map<Integer,Integer> map = new HashMap<>();
-        for(int i = 0; i < nums.length; i++){
-            if(map.containsKey(target - nums[i])){
-                return new int[]{map.get(target - nums[i]) , i};
+        Map<Integer, Integer> map = new HashMap<>(); // 使用HashMap來儲存數字與其索引的對應關係
+        for (int i = 0; i < nums.length; i++) {
+            int complement = target - nums[i]; // 計算目標與當前數字的差值
+            if (map.containsKey(complement)) { // 如果map中已經存在差值對應的索引，就返回結果
+                return new int[] { map.get(complement), i };
             }
-            map.put(nums[i],i);
+            map.put(nums[i], i); // 將當前數字與其索引加入map
         }
-        return null;
+        throw new IllegalArgumentException("No two sum solution"); // 如果找不到符合條件的數字組合，就拋出異常
     }
 }
 ```
