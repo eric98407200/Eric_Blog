@@ -37,7 +37,7 @@ class Solution {
             if (map.containsKey(complement)) { // 如果map中已經存在差值對應的索引，就返回結果
                 return new int[] { map.get(complement), i };
             }
-            map.put(nums[i], i); // 將當前數字與其索引加入map
+            map.put(nums[i], i); // 將當前數字與其索引加入map (以nums中value作為key值)
         }
         throw new IllegalArgumentException("No two sum solution"); // 如果找不到符合條件的數字組合，就拋出異常
     }
