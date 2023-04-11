@@ -74,10 +74,10 @@ class Solution {
     }
 }
 ```
-    * 我們可以使用一次遍歷來解決此問題。遍歷整個數組，同時維護兩個變量：minPrice 和 maxProfit。
-    * minPrice：當前已經遍歷過的最小股票價格。
-    * maxProfit：當前已經遍歷過的最大利潤。
-    * 遍歷時，我們可以使用以下邏輯：
+    * 使用一次for迴圈來解決此問題。遍歷整個數組，同時維護兩個變數：minPrice 和 maxProfit。
+    *   minPrice：當前已經遍歷過的最小股票價格。
+    *   maxProfit：當前已經遍歷過的最大利潤。
+    * 
     * 如果當前股票價格比 minPrice 小，則更新 minPrice 為當前股票價格。
     * 否則，如果當前股票價格減去 minPrice 的值比 maxProfit 大，則更新 maxProfit 為該值。
 
