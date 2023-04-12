@@ -5,7 +5,7 @@
 ### LeetCode75練習
 * Two Sum
 * Best Time to Buy and Sell Stock
-* 
+* Contains Duplicate
 
 ### JAVA學習
 * lambda
