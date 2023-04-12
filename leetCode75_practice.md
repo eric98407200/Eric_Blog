@@ -87,7 +87,7 @@ Input: nums = [1,2,3,1]
 Output: true
 ```
 * 有則返回TRUE，若沒有則返回FALSE
-### 解答 : 使用 HashSet 來解決這個問題。HashSet 是一個集合類型，用來存儲一組唯一的元素。因此，如果在向 HashSet 中添加元素時發現該元素已經存在。
+### 解答 : 使用HashSet搭配for迴圈
 ```java
 class Solution {
     public static boolean containsDuplicate(int[] nums) {
