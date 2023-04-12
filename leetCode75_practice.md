@@ -80,12 +80,13 @@ class Solution {
 ----
 ## 3.Contains Duplicate
 ### 問題
-* 數組中若有重複的值，返回TRUE，若沒有則返回FALSE。
+* 找出數組中重複的值。
 ### 範例:
 ```
 Input: nums = [1,2,3,1]
 Output: true
 ```
+* 有則返回TRUE，若沒有則返回FALSE
 ### 解答 : 使用 HashSet 來解決這個問題。HashSet 是一個集合類型，用來存儲一組唯一的元素。因此，如果在向 HashSet 中添加元素時發現該元素已經存在。
 ```java
 class Solution {
