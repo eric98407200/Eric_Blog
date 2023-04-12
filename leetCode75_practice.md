@@ -1,5 +1,4 @@
 # 淺淺地紀錄leetCode 75 刷題過程
-
 ## 1.Two Sum 
 ### 問題
 * 給一個陣列，返回兩個數字的索引，使它們相加到特定目標
@@ -44,7 +43,7 @@ class Solution {
 }
 ```
 * 這邊因只使用一個for迴圈，其中利用差值所得到另一個數值，查詢HashMap內是否有存在，如果有的話則返回其索引值。此方法時間複雜度是O(n)
-------------------------------------------------------------------------------------------------------------   
+----
 ## 2.Best Time to Buy and Sell
 ### 問題
 * 給定一個股票價格的數組 prices，prices[i] 表示第 i 天的股票價格。你想要通過一次買進和一次賣出交易來獲得最大利潤。如果不能獲得利潤，則返回 0。
@@ -78,8 +77,31 @@ class Solution {
 * maxProfit：當前已經遍歷過的最大利潤。
 * 如果當前股票價格比 minPrice 小，則更新 minPrice 為當前股票價格。
 * 否則，如果當前股票價格減去 minPrice 的值比 maxProfit 大，則更新 maxProfit 為該值。
-
-    
+----
+## 3.Contains Duplicate
+### 問題
+* 數組中若有重複的值，返回TRUE，若沒有則返回FALSE。
+### 範例:
+```
+Input: nums = [1,2,3,1]
+Output: true
+```
+### 解答 : 使用 HashSet 來解決這個問題。HashSet 是一個集合類型，用來存儲一組唯一的元素。因此，如果在向 HashSet 中添加元素時發現該元素已經存在。
+```java
+class Solution {
+    public static boolean containsDuplicate(int[] nums) {
+        Set<Integer> set = new HashSet<>();
+        for(int i = 0; i < nums.length; i++){
+            if(set.contains(nums[i])){
+            	return true;
+            }else {
+            	set.add(nums[i]);
+            }
+        }
+        return false;
+    }
+}
+```
 
 
 
