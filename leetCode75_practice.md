@@ -104,5 +104,29 @@ class Solution {
 }
 ```
 * 這邊因只使用一個for迴圈，時間複雜度及空間複雜度皆是O(n)
-
+----
+## 4.Number of 1 Bits
+### 問題
+* 寫一個函數，它接受一個無符號整數的二進制表示，並返回它包含的1位元的數量。
+### 範例:
+```
+Input: n = 00000000000000000000000000001011
+Output: 3
+Explanation: The input binary string 00000000000000000000000000001011 has a total of three '1' bits.
+```
+* 計算出位元中含有1的數量
+### 解答 : 定義一個計數器count，並使用while循環遍歷整個輸入的整數
+```java
+class Solution {
+    public static int hammingWeight(int n) {
+        int count = 0;
+        while (n != 0) {
+            count += n & 1;
+            n >>>= 1;
+        }
+        return count;
+    }
+}
+```
+* 此方法時間複雜度為O(k)，其中k是n的二進制表示中1的個數、空間複雜度是O(1)。
 
