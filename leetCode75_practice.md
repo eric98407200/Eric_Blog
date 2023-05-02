@@ -129,4 +129,30 @@ class Solution {
 }
 ```
 * 此方法時間複雜度為O(k)，其中k是n的二進制表示中1的個數、空間複雜度是O(1)。
-
+----
+## 5.Counting Bits
+### 問題
+* 給定一個整數n，返回一個長度為n+1的數組ans，ans[i]是i的二進制表示中1的個數。
+### 範例:
+```
+Input: n = 2
+Output: [0,1,1]
+Explanation:
+0 --> 0
+1 --> 1
+2 --> 10
+```
+* 計算出整數二進制表示中1的數量，並放入array中
+### 解答 : 使用for循環遍歷，並使用bitCount得出整數中1的數量
+```java
+class Solution {
+    public int[] countBits(int n) {
+        int[] arr = new int [n+1];
+        for(int i = 0; i <= n; i++){
+            arr[i] = Integer.bitCount(i);
+        }
+        return arr;
+    }
+}
+```
+* 此方法時間和空間複雜度都是O(n)
