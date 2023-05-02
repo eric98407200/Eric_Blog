@@ -7,6 +7,7 @@
 * Best Time to Buy and Sell Stock
 * Contains Duplicate
 * Number of 1 Bits
+* Counting Bits
 
 ### JAVA學習
 * lambda
