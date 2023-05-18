@@ -1,5 +1,5 @@
 # 淺淺地紀錄leetCode 75 刷題過程
-## 1.Two Sum 
+## @ Two Sum 
 ### 問題
 * 給一個陣列，返回兩個數字的索引，使它們相加到特定目標
 ### 範例:
@@ -43,6 +43,33 @@ class Solution {
 }
 ```
 * 這邊因只使用一個for迴圈，其中利用差值所得到另一個數值，查詢HashMap內是否有存在，如果有的話則返回其索引值。此方法時間複雜度是O(n)
+----
+## @ Maximum Subarray
+### 問題
+* 找出整數陣列中具有最大總和的子陣列，並返回該總和。
+### 範例:
+```
+Input: nums = [-2,1,-3,4,-1,2,1,-5,4]
+Output: 6
+Explanation: The subarray [4,-1,2,1] has the largest sum 6.
+```
+* 需從 nums 中找出兩數相加等於 target 的兩數索引值，並回傳兩數索引值組成的容器
+### 解答 : 使用Kadane's algorithm（卡登算法），通過遍歷陣列一次，在線性時間內找到最大子陣列和。該算法的基本思想是維護兩個變數：目前子陣列的總和和找到的最大總和。在遍歷過程中，將當前元素添加到目前總和中，並更新最大總和。如果目前總和變為負數，則將其重置為0，重新計算子陣列的總和。最終，最大總和即為所求
+```java
+class Solution {
+    public int maxSubArray(int[] nums) {
+        int sum = 0;
+        int max = Integer.MIN_VALUE;
+        for(int i = 0; i < nums.length; i++){
+            sum += nums[i];
+            max = Math.max(max,sum);
+            if(sum<0)sum =0;
+        }
+        return max;
+    }
+}
+```
+* 這邊因只使用一個for迴圈，該解答的時間複雜度為 O(n)、空間複雜度為 O(1)。
 ----
 ## 2.Best Time to Buy and Sell
 ### 問題
