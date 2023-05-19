@@ -71,6 +71,37 @@ class Solution {
 ```
 * 這邊因只使用一個for迴圈，該解答的時間複雜度為 O(n)、空間複雜度為 O(1)。
 ----
+## @ Container With Most Water
+### 問題
+* 在一個非負整數的陣列中，找到兩個柱子組成的容器，使其能夠盛放最多的水。
+### 範例:
+```
+Input: height = [1,8,6,2,5,4,8,3,7]
+Output: 49
+Explanation: The above vertical lines are represented by array [1,8,6,2,5,4,8,3,7]. 
+In this case, the max area of water (blue section) the container can contain is 49.
+```
+* 回傳最大容積、需同時考慮X,Y軸。
+### 解答 : 使用「雙指針法」來解決。初始化兩個指針，一個指向陣列的開始，另一個指向陣列的結尾。然後計算兩個指針所指的柱子所能容納的水量（取兩個指針指向的柱子中較小的高度乘上兩個指針之間的距離），並更新目前的最大水量。
+```java
+class Solution {
+    public static int maxArea(int[] height) {
+    	int size = 0;
+    	int left = 0, right = height.length - 1;
+    	while(left < right) {
+    		size = Math.max(Math.min(height[left], height[right])*(right-left), size);
+    		if(height[left] < height[right]) {
+    			left++;
+    		}else {
+    			right--;
+    		}
+    	}
+    	return size;
+    }
+}
+```
+* 時間複雜度為O(n)，其中n為陣列的長度，因為只需遍歷一次陣列。
+----
 ## 2.Best Time to Buy and Sell
 ### 問題
 * 給定一個股票價格的數組 prices，prices[i] 表示第 i 天的股票價格。你想要通過一次買進和一次賣出交易來獲得最大利潤。如果不能獲得利潤，則返回 0。
