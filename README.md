@@ -6,6 +6,7 @@
 * @ Two Sum
 * @ Maximum Subarray
 * @ Container With Most Water
+* @ Merge Intervals
 
 
 * Best Time to Buy and Sell Stock
