@@ -63,7 +63,7 @@ class Solution {
         for(int i = 0; i < nums.length; i++){
             sum += nums[i];
             max = Math.max(max,sum);
-            if(sum<0)sum =0;
+            if(sum<0)sum = 0;
         }
         return max;
     }
