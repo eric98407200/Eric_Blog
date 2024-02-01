@@ -58,14 +58,17 @@ Explanation: The subarray [4,-1,2,1] has the largest sum 6.
 ```java
 class Solution {
     public int maxSubArray(int[] nums) {
-        int sum = 0;
-        int max = Integer.MIN_VALUE;
-        for(int i = 0; i < nums.length; i++){
-            sum += nums[i];
-            max = Math.max(max,sum);
-            if(sum<0)sum = 0;
-        }
-        return max;
+    	//設定目前總和
+    	int sum = 0;
+    	//設定最大總和
+    	int max = Integer.MIN_VALUE;
+    	for(int i = 0; i < nums.length; i++) {
+			sum += nums[i];
+    		max = Math.max(sum, max);
+    		//總和小於0時歸0
+    		if(sum < 0) sum = 0;
+    	}
+    	return max;
     }
 }
 ```
