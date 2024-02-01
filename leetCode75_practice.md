@@ -127,11 +127,15 @@ Note that buying on day 2 and selling on day 1 is not allowed because you must b
 ```java
 class Solution {
     public int maxProfit(int[] prices) {
-        int minPrice = Integer.MAX_VALUE;   
+        //最低購買金額
+        int minPrice = Integer.MAX_VALUE;
+        //最大盈利
         int maxProfit = 0;
         for (int i = 0; i < prices.length; i++) {
+            //找出最低的購買金額
             if (prices[i] < minPrice) {
                 minPrice = prices[i];
+            //如果今天的金額大於最低購買金額時則計算最大盈利
             } else if (prices[i] - minPrice > maxProfit) {
                 maxProfit = prices[i] - minPrice;
             }
