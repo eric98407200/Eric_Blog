@@ -86,10 +86,20 @@ In this case, the max area of water (blue section) the container can contain is 
 ```java
 class Solution {
     public static int maxArea(int[] height) {
-    	int size = 0;
+        //設定寬度
+    	int width = 0;
+        //設定左右指針位置
     	int left = 0, right = height.length - 1;
+        //指針往右靠
     	while(left < right) {
-    		size = Math.max(Math.min(height[left], height[right])*(right-left), size);
+            // 計算容器的寬度
+            int width = right - left;
+            // 計算容器的高度，選擇左右兩邊較矮的那一邊
+            int containerHeight = Math.min(height[left], height[right]);
+            // 計算容器的面積並更新最大面積
+            int area = width * containerHeight;
+            maxArea = Math.max(maxArea, area);
+            // 移動指針，將高度較矮的一邊向內移動，以尋找可能的更大面積
     		if(height[left] < height[right]) {
     			left++;
     		}else {
